@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<script src="jquery-1.12.0.js"></script>
+<script src="jquery.validate.js"></script>
+<script>  
+    $(function(){
+    var settings = {
+        rules:{  
+            nickName:"required",
+            userAcct:{
+                required: true,
+                minlength: 5
+            },
+            userEmail:{
+                required: true,
+                email:true
+            },
+            uerBlog:{
+                required: true,
+                url:true
+            },
+            userAge:{
+                required: true,
+                number:true
+            }        
+        },
+        messages:{
+                nickName:'这是必填的',
+            userAcct:{
+                required:'这是必填的',
+                minlength:'最少5个字符'
+            },
+            userEmail:{
+                required:'这是必填的',
+                email:'要填合法的email'
+            },
+            uerBlog:{
+                required:'这是必填的',
+                url:'要填合法的url'
+            },
+            userAge:{
+                required:'这是必填的',
+                number:'年龄必须是数字'
+            },
+        }
+    };
+    $("form").validate(settings);
+});  
+</script>
+<style>
+    form input {
+        margin:5px 0px;
+    }
+</style>
+</head>
+<body>
+<form> 
+    <input type="text" name="nickName"><br/>
+    <input type="text" name="userAcct"><br/>
+    <input type="text" name="userEmail"><br/>
+    <input type="text" name="uerBlog"><br/>  
+    <input type="text" name="userAge"><br/>  
+    <input type="submit" value="提交" /> 
+</form> 
+</body>
+</html>
